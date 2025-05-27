@@ -1,130 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Меню Ресторана</title>
+  <title>Пиздализалка.ру</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 0;
-    }
-    .menu-container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .menu-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .menu-header h1 {
-      font-size: 2.5rem;
-      color: #333;
-    }
-    .menu-section {
-      margin-bottom: 40px;
-    }
-    .menu-section h2 {
-      font-size: 2rem;
-      color: #555;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-    }
-    .menu-item:last-child {
-      border-bottom: none;
-    }
-    .menu-item-name {
-      font-size: 1.2rem;
-      color: #333;
-    }
-    .menu-item-price {
-      font-size: 1.2rem;
-      color: #777;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-<div class="menu-container">
-  <div class="menu-header">
-    <h1>Меню Ресторана</h1>
-  </div>
 
-  <div class="menu-section">
-    <h2>Закуски</h2>
-    <div class="menu-item">
-      <span class="menu-item-name">Суп "Борщ"</span>
-      <span class="menu-item-price">150 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Салат "Цезарь"</span>
-      <span class="menu-item-price">200 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Картофель фри</span>
-      <span class="menu-item-price">120 руб.</span>
-    </div>
-  </div>
+<body class="bg-gray-100 text-gray-800">
+<header class="bg-blue-600 text-white shadow-md">
+  <nav class="container mx-auto p-4 flex justify-between items-center">
 
-  <div class="menu-section">
-    <h2>Основные блюда</h2>
-    <div class="menu-item">
-      <span class="menu-item-name">Говяжий стейк</span>
-      <span class="menu-item-price">500 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Куриная грудка с овощами</span>
-      <span class="menu-item-price">350 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Паста "Карбонара"</span>
-      <span class="menu-item-price">300 руб.</span>
-    </div>
-  </div>
+    <ul class="flex space-x-6">
+      <li><a href="/" class="hover:text-blue-300">Главная</a></li>
+      <li><a href="/sushi" class="hover:text-blue-300">Суши</a></li>
+      <li><a href="/pizza" class="hover:text-blue-300">Пицца</a></li>
+      <li><a href="/snacks" class="hover:text-blue-300">Снеки</a></li>
+      <li><a href="/drinks" class="hover:text-blue-300">Напитки</a></li>
+    </ul>
 
-  <div class="menu-section">
-    <h2>Десерты</h2>
-    <div class="menu-item">
-      <span class="menu-item-name">Тирамису</span>
-      <span class="menu-item-price">180 руб.</span>
+    <div class="flex space-x-4">
+      <a href="/cart" class="hover:text-blue-300">Корзина</a>
+      <a href="/profile" class="hover:text-blue-300">Личный кабинет</a>
     </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Чизкейк</span>
-      <span class="menu-item-price">200 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Фруктовый салат</span>
-      <span class="menu-item-price">150 руб.</span>
-    </div>
-  </div>
+  </nav>
+</header>
 
-  <div class="menu-section">
-    <h2>Напитки</h2>
-    <div class="menu-item">
-      <span class="menu-item-name">Кофе</span>
-      <span class="menu-item-price">100 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Чай</span>
-      <span class="menu-item-price">80 руб.</span>
-    </div>
-    <div class="menu-item">
-      <span class="menu-item-name">Сок</span>
-      <span class="menu-item-price">120 руб.</span>
-    </div>
-  </div>
-</div>
+<main class="container mx-auto p-4">
+  <section class="hero bg-blue-500 text-white p-8 rounded-lg shadow-md text-center">
+    <h1 class="text-4xl font-bold mb-4">Даник кмс по куни</h1>
+    <p class="text-lg mb-6">Лучше пизду лизать чем програмистом стать </p>
+    <a href="/sushi" class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-blue-100">Посмотреть меню</a>
+  </section>
+</main>
+
+<footer class="bg-blue-600 text-white p-4 mt-8">
+  <p class="text-center">&copy; 2023 Авто-суши. Все права защищены.</p>
+</footer>
+
 </body>
 </html>
