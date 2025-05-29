@@ -1,4 +1,4 @@
-package com.example.Restoran.controller;
+package com.example.Restoran.controller.paint;
 
 
 import org.springframework.stereotype.Controller;
@@ -46,6 +46,13 @@ public class MyPageController {
         return "sushi";
 
     }
+    @GetMapping("fullmenu")
+    public String paintfullmenu(){
+
+
+        return "fullmenu";
+    }
+
 
 
 }
