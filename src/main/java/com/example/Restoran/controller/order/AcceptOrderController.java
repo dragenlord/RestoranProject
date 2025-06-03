@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 public class AcceptOrderController {
 
-    @GetMapping()
+    @GetMapping("/")
     public Void AcceptOrderController() {
 
 

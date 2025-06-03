@@ -11,6 +11,7 @@ public class MyPageController {
 
     @GetMapping("/page")
     public String paintMyPage(){
+
         return "MyPage";
     }
 
@@ -46,10 +47,9 @@ public class MyPageController {
         return "sushi";
 
     }
+
     @GetMapping("fullmenu")
     public String paintfullmenu(){
-
-
         return "fullmenu";
     }
 
