@@ -1,10 +1,7 @@
 package com.example.Restoran.controller.paint;
 
 
-import com.example.Restoran.repository.DrinkRepository;
-import com.example.Restoran.repository.PizzaRepository;
-import com.example.Restoran.repository.SnecksRepository;
-import com.example.Restoran.repository.SushiRepository;
+import com.example.Restoran.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +17,7 @@ public class MyPageController {
     private final PizzaRepository pizzaRepository;
     private final SnecksRepository snecksRepository;
     private final SushiRepository sushiRepository;
+//    private final CartRepository cartRepository;
 
 
 
@@ -30,7 +28,8 @@ public class MyPageController {
     }
 
     @GetMapping("/cart")
-    public String paintcart(){
+    public String paintcart(Model model){
+//        model.addAttribute("cart",cartRepository.findAll());
         return "cart";
     }
 

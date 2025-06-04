@@ -6,15 +6,11 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "sushi")
 public class sushi {
-    @SequenceGenerator(
-            name = "sushi_sequence",
-            sequenceName = "sushi_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "sushi_sequence"
-    )
+
+
+
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sushi_seq")
+    @SequenceGenerator(name = "sushi_seq", sequenceName = "sushi_seq", allocationSize = 1)
     @Id
     private Long id;
     private String name;

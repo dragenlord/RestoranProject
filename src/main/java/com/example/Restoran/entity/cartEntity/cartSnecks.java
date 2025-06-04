@@ -1,24 +1,23 @@
-package com.example.Restoran.entity;
+package com.example.Restoran.entity.cartEntity;
 
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name = "drink")
-public class drinks {
+@Table(name = "cartsneck")
+public class cartSnecks {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "drinks_seq")
-    @SequenceGenerator(name = "drinks_seq", sequenceName = "drinks_seq", allocationSize = 1)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cartsnecks_seq")
+    @SequenceGenerator(name = "cartsnecks_seq", sequenceName = "cartcnecks_seq", allocationSize = 1)
     private Long id;
-
     private String name;
-
     private double price;
 
-    public drinks() {
+    public cartSnecks() {
     }
 
-    public drinks(Long id, String name, double price) {
+    public cartSnecks(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -48,3 +47,5 @@ public class drinks {
         this.price = price;
     }
 }
+
+
