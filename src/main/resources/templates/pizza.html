@@ -33,7 +33,7 @@
                 <span class="menu-item-name text-lg" th:text="${pizza.name}"></span>
                 <div class="flex items-center space-x-4">
                     <span class="menu-item-price text-lg" th:text="${pizza.price} + ' руб.'"></span>
-                    <form th:action="@{/api/cart/add}" method="POST">
+                    <form th:action="@{/api/cart/add/pizza}" method="POST">
                         <input type="hidden" name="id" th:value="${pizza.id}">
                         <input type="hidden" name="name" th:value="${pizza.name}">
                         <input type="hidden" name="price" th:value="${pizza.price}">

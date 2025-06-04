@@ -1,16 +1,23 @@
 package com.example.Restoran.service;
 
 
+import com.example.Restoran.entity.drinks;
+import com.example.Restoran.repository.cartRepository.CartDrinkRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+
+@AllArgsConstructor
 @Service
 public class OrderService {
 
-    public String addOrder() {
+    private final CartDrinkRepository cartDrinkRepository;
 
-        return "Order added";
+    public List<drinks> allDrinks() {
+        return cartDrinkRepository.findAll();
     }
-
 
 
 }
