@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class AcceptOrderController {
 
     @GetMapping("/")
-    public Void AcceptOrderController() {
+    public String AcceptOrderController() {
 
 
         return null;
