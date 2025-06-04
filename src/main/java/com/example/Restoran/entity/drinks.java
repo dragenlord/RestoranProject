@@ -1,23 +1,22 @@
 package com.example.Restoran.entity;
 
-
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
-@Table(name = "Order")
-public class Order {
+@Table(name = "drink")
+public class drinks {
+
 
     @SequenceGenerator(
-            name = "Order_sequence",
-            sequenceName = "Order_sequence",
+            name = "drink_sequence",
+            sequenceName = "drink_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "Order_sequence"
+            generator = "drink_sequence"
     )
+
     @Id
     private Long id;
 
@@ -25,6 +24,14 @@ public class Order {
 
     private double price;
 
+    public drinks() {
+    }
+
+    public drinks(Long id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
     public Long getId() {
         return id;
@@ -48,15 +55,5 @@ public class Order {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public Order(Long id, String name, double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-
-    }
-
-    public Order() {
     }
 }

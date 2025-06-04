@@ -1,37 +1,34 @@
 package com.example.Restoran.entity;
 
+
 import jakarta.persistence.*;
 
-import java.util.List;
 @Entity
-@Table(name = "drink")
-public class drink {
-
+@Table(name = "snecks")
+public class snecks {
 
     @SequenceGenerator(
-            name = "drink_sequence",
-            sequenceName = "drink_sequence",
+            name = "snecks_sequence",
+            sequenceName = "snecks_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "drink_sequence"
+            generator = "snecks_sequence"
     )
-
     @Id
     private Long id;
-
     private String name;
-
     private double price;
 
-    public drink() {
-    }
 
-    public drink(Long id, String name, double price) {
+    public snecks(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public snecks() {
     }
 
     public Long getId() {

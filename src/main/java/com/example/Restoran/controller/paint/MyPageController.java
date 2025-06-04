@@ -1,13 +1,27 @@
 package com.example.Restoran.controller.paint;
 
 
+import com.example.Restoran.repository.DrinkRepository;
+import com.example.Restoran.repository.PizzaRepository;
+import com.example.Restoran.repository.SnecksRepository;
+import com.example.Restoran.repository.SushiRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class MyPageController {
+
+    private final DrinkRepository drinkRepository;
+    private final PizzaRepository pizzaRepository;
+    private final SnecksRepository snecksRepository;
+    private final SushiRepository sushiRepository;
+
+
 
     @GetMapping("/page")
     public String paintMyPage(){
@@ -21,12 +35,15 @@ public class MyPageController {
     }
 
     @GetMapping("/drinks")
-    public String paintdrinks(){
+    public String paintdrinks(Model model){
+        model.addAttribute("drink", drinkRepository.findAll());
         return "drinks";
 
     }
+
     @GetMapping("/pizza")
-    public String paintpizza(){
+    public String showPizza(Model model) {
+        model.addAttribute("pizzas", pizzaRepository.findAll());
         return "pizza";
     }
 
@@ -37,13 +54,15 @@ public class MyPageController {
     }
 
     @GetMapping("/snacks")
-    public String paintsneki(){
+    public String paintsneki(Model model){
+        model.addAttribute("snecks", snecksRepository.findAll());
         return "sneki";
 
     }
 
     @GetMapping("/sushi")
-    public String paintsushi(){
+    public String paintsushi(Model model){
+        model.addAttribute("sushi", sushiRepository.findAll());
         return "sushi";
 
     }
