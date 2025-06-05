@@ -25,6 +25,10 @@ public class Order {
 
     private double price;
 
+    private String address;
+
+
+
 
     public Long getId() {
         return id;
@@ -50,11 +54,19 @@ public class Order {
         this.price = price;
     }
 
-    public Order(Long id, String name, double price) {
+    public Order(Long id, String name, double price, String address) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.address = address;
+    }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Order() {
