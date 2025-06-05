@@ -2,7 +2,7 @@ package com.example.Restoran.controller.paint;
 
 
 import com.example.Restoran.repository.*;
-import com.example.Restoran.repository.cartRepository.CartDrinkRepository;
+
 import com.example.Restoran.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,6 @@ public class MyPageController {
     private final PizzaRepository pizzaRepository;
     private final SnecksRepository snecksRepository;
     private final SushiRepository sushiRepository;
-    private final CartDrinkRepository cartDrinkRepository;
     private final OrderService orderService;
 
 
@@ -30,12 +29,6 @@ public class MyPageController {
         return "MyPage";
     }
 
-    @GetMapping("/cart")
-    public String paintcart(Model model){
-          model.addAttribute("cart",orderService.allDrinks());
-
-        return "cart";
-    }
 
     @GetMapping("/drinks")
     public String paintdrinks(Model model){

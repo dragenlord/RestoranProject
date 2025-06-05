@@ -29,20 +29,21 @@
         <h1 class="text-3xl font-bold mb-6">Пицца</h1>
         <div class="menu-section">
             <h2 class="text-2xl font-semibold mb-4">Пицца</h2>
-            <div th:each="pizza : ${pizzas}" class="menu-item flex justify-between items-center border-b border-gray-200 py-4">
-                <span class="menu-item-name text-lg" th:text="${pizza.name}"></span>
-                <div class="flex items-center space-x-4">
-                    <span class="menu-item-price text-lg" th:text="${pizza.price} + ' руб.'"></span>
-                    <form th:action="@{/api/cart/add/pizza}" method="POST">
-                        <input type="hidden" name="id" th:value="${pizza.id}">
-                        <input type="hidden" name="name" th:value="${pizza.name}">
-                        <input type="hidden" name="price" th:value="${pizza.price}">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-200">
-                            Добавить в корзину
-                        </button>
-                    </form>
+            <div class="menu-section">
+                <div th:each="pizza : ${pizzas}" class="menu-item flex justify-between items-center border-b border-gray-200 py-4">
+                    <span class="menu-item-name text-lg" th:text="${pizza.name}"></span>
+                    <div class="flex items-center space-x-4">
+                        <span class="menu-item-price text-lg" th:text="${pizza.price} + ' руб.'"></span>
+                        <form th:action="@{/api/cart/add/pizza}" method="POST">
+                            <input type="hidden" name="itemId" th:value="${pizza.id}">
+                            <input type="hidden" name="itemName" th:value="${pizza.name}">
+                            <input type="hidden" name="itemPrice" th:value="${pizza.price}">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-200">
+                                Добавить в корзину
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </section>
 </main>

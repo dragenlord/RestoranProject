@@ -33,10 +33,10 @@
                 <span class="menu-item-name text-lg" th:text="${sushi.name}"></span>
                 <div class="flex items-center space-x-4">
                     <span class="menu-item-price text-lg" th:text="${sushi.price} + ' руб.'"></span>
-                    <form th:action="@{api/cart/add}" method="POST">
-                        <input type="hidden" name="id" th:value="${sushi.id}">
-                        <input type="hidden" name="name" th:value="${sushi.name}">
-                        <input type="hidden" name="price" th:value="${sushi.price}">
+                    <form th:action="@{/api/cart/add/sushi}" method="POST">
+                        <input type="hidden" name="itemId" th:value="${sushi.id}">
+                        <input type="hidden" name="itemName" th:value="${sushi.name}">
+                        <input type="hidden" name="itemPrice" th:value="${sushi.price}">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-200">
                             Добавить в корзину
                         </button>

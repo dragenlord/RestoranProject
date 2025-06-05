@@ -1,40 +1,59 @@
 package com.example.Restoran.controller.cart;
 
 
-import com.example.Restoran.entity.cartEntity.cartDrink;
-import com.example.Restoran.entity.cartEntity.cartPizza;
-import com.example.Restoran.entity.drinks;
-import com.example.Restoran.entity.pizza;
-import com.example.Restoran.repository.DrinkRepository;
-import com.example.Restoran.repository.cartRepository.CartDrinkRepository;
-import com.example.Restoran.repository.cartRepository.CartPizzaRepository;
-import com.example.Restoran.service.OrderService;
+import com.example.Restoran.entity.cart;
+import com.example.Restoran.repository.CartRepository;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @AllArgsConstructor
 @Controller
 public class CartController {
-        private final CartDrinkRepository cartDrinkRepository;
-        private final OrderService orderService;
-        private final CartPizzaRepository cartPizzaRepository;
+
+    private CartRepository cartRepository;
 
 
-    @PostMapping("api/cart/add")
-    public String addDrinkFromCart(cartDrink drink) {
-        cartDrinkRepository.save(drink);
+    @GetMapping("/api/cart")
+    public String getCart(Model model) {
+        model.addAttribute("cartItems", cartRepository.findAll());
+        return "cart"; // Имя шаблона для страницы корзины
+    }
+
+    @PostMapping("/api/cart/add/sushi")
+    public String addCartsushi(@RequestParam Long itemId,@RequestParam String itemName,@RequestParam double itemPrice ){
+        cart Cart = new cart(null,itemId,itemName,itemPrice);
+        cartRepository.save(Cart);
+        return "redirect:api/sushi";
+    }
+
+    @PostMapping("/api/cart/add/pizza")
+    public String addCartpizza(@RequestParam Long itemId,@RequestParam String itemName,@RequestParam double itemPrice ){
+        cart Cart = new cart(null,itemId,itemName,itemPrice);
+        cartRepository.save(Cart);
+        return "redirect:/api/pizza";
+    }
+    @PostMapping("/api/cart/add/snecks")
+    public String addCartsnecks(@RequestParam Long itemId,@RequestParam String itemName,@RequestParam double itemPrice ){
+        cart Cart = new cart(null,itemId,itemName,itemPrice);
+        cartRepository.save(Cart);
+        return "redirect:/api/snacks";
+    }
+
+    @PostMapping("api/cart/add/drinks")
+    public String addCartdrinks(@RequestParam Long itemId,@RequestParam String itemName,@RequestParam double itemPrice ){
+        cart Cart = new cart(null,itemId,itemName,itemPrice);
+        cartRepository.save(Cart);
         return "redirect:/api/drinks";
     }
 
-    @PostMapping("api/cart/add/pizza")
-    public String addPizzaFromCart(cartPizza pizza) {
-        cartPizzaRepository.save(pizza);
-        return "redirect:/api/pizza";
-    }
+
+
 
 
 }
