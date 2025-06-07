@@ -38,6 +38,7 @@ public class CartController {
     public String removeFromCart(@PathVariable Long id) {
         cartRepository.deleteById(id);
         return"redirect:/api/cart";
+
     }
 
     @GetMapping("/api/cart/checkout")
@@ -47,6 +48,7 @@ public class CartController {
                 .sum();
         model.addAttribute("totalPrice", totalPrice);
         return "checkout";
+
     }
 
     @PostMapping("/api/cart/add/sushi")
@@ -54,6 +56,7 @@ public class CartController {
         cart Cart = new cart(null,itemId,itemName,itemPrice);
         cartRepository.save(Cart);
         return "redirect:/api/sushi";
+
     }
 
     @PostMapping("/api/cart/add/pizza")
@@ -61,6 +64,7 @@ public class CartController {
         cart Cart = new cart(null,itemId,itemName,itemPrice);
         cartRepository.save(Cart);
         return "redirect:/api/pizza";
+
     }
 
     @PostMapping("/api/cart/add/snecks")
@@ -68,6 +72,7 @@ public class CartController {
         cart Cart = new cart(null,itemId,itemName,itemPrice);
         cartRepository.save(Cart);
         return "redirect:/api/snacks";
+
     }
 
     @PostMapping("api/cart/add/drinks")
@@ -75,12 +80,15 @@ public class CartController {
         cart Cart = new cart(null,itemId,itemName,itemPrice);
         cartRepository.save(Cart);
         return "redirect:/api/drinks";
+
     }
 
 
     @PostMapping("/api/cart/placeOrder")
     @Transactional
-    public String plaseOrder(@RequestParam String name, @RequestParam double totalPrice, @RequestParam String address) {
+    public String plaseOrder(@RequestParam String name,
+                             @RequestParam double totalPrice,
+                             @RequestParam String address) {
         List<cart> cartItems = cartRepository.findAll();
         List<OrderItem> orderItems = cartItems.stream()
                 .map(cart -> {
