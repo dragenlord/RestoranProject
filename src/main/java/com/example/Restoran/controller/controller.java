@@ -41,4 +41,23 @@ public class controller {
         return "profile";
     }
 
+    @GetMapping("/drinks")
+    public String drinks() {
+        return "drinks";
+    }
+
+    @GetMapping("/burgers")
+    public String burgers() {
+        return "burgers";
+    }
+
+    @GetMapping("/pizzas")
+    public String pizzas() {
+        return "pizzas";
+    }
+
+    @GetMapping("/salads")
+    public String salads() {
+        return "salads";
+    }
 }

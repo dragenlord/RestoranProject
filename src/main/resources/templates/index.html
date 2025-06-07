@@ -3,184 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название вашего сайта</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff3e0; /* Светло-оранжевый фон */
-        }
-
-        header {
-            background-color: #ff5722; /* Красный оранжевый */
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-actions a, .header-actions button {
-            margin-left: 10px;
-            padding: 8px 12px;
-            border: none;
-            background-color: #ff7043; /* Светло-оранжевый */
-            color: white;
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
-        .header-actions a:hover, .header-actions button:hover {
-            background-color: #ff5722; /* Красный оранжевый */
-        }
-
-        #menu {
-            padding: 20px;
-        }
-
-        .menu-item {
-            border: 1px solid #ff7043; /* Светло-оранжевый */
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-item img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .menu-item h3 {
-            color: #ff5722; /* Красный оранжевый */
-        }
-
-        .menu-item-details {
-            margin-top: 10px;
-        }
-
-        .menu-item button {
-            background-color: #ff5722; /* Красный оранжевый */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-
-        .menu-item button:hover {
-            background-color: #e64a19; /* Темно-оранжевый */
-        }
-
-        footer {
-            background-color: #ff5722; /* Красный оранжевый */
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Добавляем отступы для элементов в header-actions */
-        .header-actions > * {
-            margin-left: 10px; /* Отступ между элементами */
-        }
-
-        /* Немного увеличиваем отступ для кнопки личного кабинета */
-        .header-actions .profile-icon {
-            margin-left: 20px; /* Увеличенный отступ */
-        }
-    </style>
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+<style>
+    /* Здесь ваши стили CSS */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+    }
+
+    header .container {
+        /*display: flex;  Удаляем это, чтобы использовать flex на header-content */
+        /*justify-content: space-between;  Удаляем это*/
+        /*align-items: center; Удаляем это */
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between; /* Размещаем кнопку и навигацию по краям */
+        align-items: center;  /* Выравниваем по вертикали */
+    }
+
+    header nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 20px;
+    }
+
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    header nav ul li input[type="text"] {
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+    }
+
+    main {
+        padding: 20px 0;
+    }
+
+    .categories {
+        background-color: #eee;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .categories .container a {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 8px 15px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .food-items {
+        padding: 20px 0;
+    }
+
+    .food-items .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .food-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+        width: 300px; /* Adjust as needed */
+        text-align: center;
+    }
+
+    .food-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .food-item h2 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .food-item .description {
+        text-align: left;
+    }
+
+    .food-item .description ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .food-item .description ul li {
+        margin-bottom: 5px;
+    }
+
+    .food-item button {
+        background-color: #008CBA;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    /* Previous styles for button
+    .home-button {
+        background-color: #008CBA;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+    */
+
+    .logo-button { /* New styles for logo */
+        background-color: #008CBA;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 24px; /* Match the original h1 font size */
+        font-weight: bold;  /* Match h1 font weight */
+        display: inline-block;
+    }
+</style>
 <body>
 <header>
-    <h1>Название вашего сайта</h1>
-    <nav>
-        <ul>
-            <li><a href="index">Главная</a></li>
-            <li><a href="menu">Меню</a></li>
-            <li><a href="about">О нас</a></li>
-            <li><a href="contacts">Контакты</a></li>
-        </ul>
-    </nav>
-    <div class="header-actions">
-        <a href="cart" class="cart-icon">Корзина</a>
-        <a href="profile" class="profile-icon">Личный кабинет</a>
-        <form action="#" method="GET" class="search-form">
-            <input type="search" name="q" placeholder="Поиск...">
-            <button type="submit">Найти</button>
-        </form>
-        <a href="menu" class="menu-button">☰ Меню</a>
-        <a href="feedback" class="feedback-button">Обратная связь</a>
+    <div class="container">
+        <div class="header-content">
+            <a href="index" class="logo-button">Главная</a>
+            <nav>
+                <ul>
+                    <li><a href="cart">Корзина</a></li>
+                    <li><a href="profile">Личный кабинет</a></li>
+                    <li><input type="text" placeholder="Поиск"></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
-
 <main>
-    <section id="menu">
-        <h2>Наше меню</h2>
-
-        <div class="menu-item">
-            <img src="" alt="Название позиции">
-            <h3>Название позиции</h3>
-            <p>Описание позиции. Небольшой текст, описывающий эту вкусняшку.</p>
-            <div class="menu-item-details">
-                <p>Вес: 200г</p>
-                <p>Ингредиенты: Мука, вода, соль, секретный ингредиент</p>
-                <p>Калорийность: 300 ккал</p>
-            </div>
-            <button>Добавить в корзину</button>
+    <section class="categories">
+        <div class="container">
+            <a href="/drinks" class="category-button">Напитки</a>
+            <a href="/burgers" class="category-button">Бургеры</a>
+            <a href="/pizzas" class="category-button">Пиццы</a>
+            <a href="/salads" class="category-button">Салаты</a>
         </div>
+    </section>
 
-        <!-- Повторяйте этот блок .menu-item для каждой позиции в меню -->
-        <div class="menu-item">
-            <img src="" alt="Другая позиция">
-            <h3>Другая позиция</h3>
-            <p>Описание другой позиции. Ещё один вкусный вариант!</p>
-            <div class="menu-item-details">
-                <p>Вес: 150г</p>
-                <p>Ингредиенты: Что-то другое</p>
-                <p>Калорийность: 250 ккал</p>
+    <section class="food-items">
+        <div class="container">
+            <!-- Example Food Item (Repeat for other items) -->
+            <div class="food-item">
+                <img src="" alt="Название блюда">
+                <h2>Название блюда</h2>
+                <div class="description">
+                    <p>Описание блюда.</p>
+                    <ul>
+                        <li>Вес: 200г</li>
+                        <li>Ингредиенты: ...</li>
+                        <li>Каллорийность: 300 ккал</li>
+                    </ul>
+                </div>
+                <button>Добавить в корзину</button>
             </div>
-            <button>Добавить в корзину</button>
+
+            <div class="food-item">
+                <img src="" alt="Название блюда">
+                <h2>Другое блюдо</h2>
+                <div class="description">
+                    <p>Описание другого блюда.</p>
+                    <ul>
+                        <li>Вес: 250г</li>
+                        <li>Ингредиенты: ...</li>
+                        <li>Каллорийность: 450 ккал</li>
+                    </ul>
+                </div>
+                <button>Добавить в корзину</button>
+            </div>
+
+            <!-- Add more food items here -->
         </div>
-
-        <!-- Ещё позиции... -->
-
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+    <div class="container">
+        <a href="/contacts">Обратная связь</a>
+        <a href="/about">О нас</a>
+    </div>
 </footer>
 </body>
 </html>
