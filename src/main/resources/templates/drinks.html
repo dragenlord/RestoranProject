@@ -39,7 +39,7 @@
             <div th:each="drink : ${drink}" class="menu-item flex justify-between items-center border-b border-gray-200 py-4">
                 <span class="menu-item-name text-lg" th:text="${drink.name}"></span>
                 <div class="flex items-center space-x-4">
-                    <span class="menu-item-price text-lg" th:text="${drink.price} + ' руб.'"></span>
+                    <span class="menu-item-price text-lg w-64 truncate" th:text="${drink.price} + ' руб.'"></span>
                     <form th:action="@{/api/cart/add/drinks}" method="POST">
                         <input type="hidden" name="itemId" th:value="${drink.id}">
                         <input type="hidden" name="itemName" th:value="${drink.name}">

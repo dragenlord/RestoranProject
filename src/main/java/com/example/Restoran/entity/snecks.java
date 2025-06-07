@@ -7,8 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "snecks")
 public class snecks {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "snecks_seq")
-    @SequenceGenerator(name = "snecks_seq", sequenceName = "cnecks_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
     private String name;

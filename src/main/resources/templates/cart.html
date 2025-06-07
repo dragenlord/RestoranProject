@@ -29,7 +29,7 @@
         <h1 class="text-3xl font-bold mb-6">Корзина</h1>
         <div th:each="cartItem : ${cartItems}" class="menu-item flex justify-between items-center border-b border-gray-200 py-4">
             <span class="menu-item-name text-lg" th:text="${cartItem.itemName}"></span>
-            <span class="menu-item-price text-lg" th:text="${cartItem.itemPrice} + ' руб.'"></span>
+            <span class="menu-item-price text-lg w-64 truncate" th:text="${cartItem.itemPrice} + ' руб.'"></span>
             <form th:action="@{/api/cart/remove/{id}(id=${cartItem.id})}" method="POST" class="ml-4">
                 <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition duration-200">
                     Удалить

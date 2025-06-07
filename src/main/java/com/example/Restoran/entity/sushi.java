@@ -8,9 +8,7 @@ import jakarta.persistence.*;
 public class sushi {
 
 
-
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sushi_seq")
-    @SequenceGenerator(name = "sushi_seq", sequenceName = "sushi_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
     private String name;
